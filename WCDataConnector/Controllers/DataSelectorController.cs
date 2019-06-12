@@ -28,6 +28,21 @@ namespace WCDataConnector.Controllers
             return View(list);
         }
 
+        public IActionResult Top10Destination2()
+        {
+            return View();
+        }
+
+        public IActionResult Top10Source2()
+        {
+            return View();
+        }
+
+        public IActionResult Top10Images()
+        {
+            return View();
+        }
+
 
         public IActionResult Top10Source()
         {
