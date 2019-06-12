@@ -35,7 +35,7 @@
             // Iterate over the JSON object
             for (var i = 0, len = resp.length; i < len; i++) {
                 tableData.push({
-                    "Destination": resp[i].Source,
+                    "Destination": resp[i].Destination,
                     "Count": resp[i].Count,
                     "Hour": resp[i].Hour
                 });
