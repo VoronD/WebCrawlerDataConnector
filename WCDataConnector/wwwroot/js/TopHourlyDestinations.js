@@ -1,18 +1,21 @@
-(function () {
+﻿(function () {
     var myConnector = tableau.makeConnector();
 
     myConnector.getSchema = function (schemaCallback) {
 
         var cols = [{
-            id: "Source",
+            id: "Destinations",
             dataType: tableau.dataTypeEnum.string
         }, {
             id: "Count",
             dataType: tableau.dataTypeEnum.int
-        }];
+            }, {
+                id: "Hour",
+                dataType: tableau.dataTypeEnum.int
+            }];
 
         var tableSchema = {
-            id: "top10sources",
+            id: "topHourlyDestinations",
             alias: "description goes here",
             columns: cols
         };
@@ -25,15 +28,16 @@
 
     // Download the data
     myConnector.getData = function (table, doneCallback) {
-        $.getJSON("https://gettopservices.azurewebsites.net/api/v1/GetTop10Sources", function (resp) {
+        $.getJSON("https://gettopservices.azurewebsites.net/api/v1/GetTopHourlyDestinationsForDay?date=6/12/19", function (resp) {
             var feat = resp.features,
                 tableData = [];
 
             // Iterate over the JSON object
             for (var i = 0, len = resp.length; i < len; i++) {
                 tableData.push({
-                    "Source": resp[i].id,
-                    "Count": resp[i].properties.mag
+                    "Destination": resp[i].Source,
+                    "Count": resp[i].Count,
+                    "Hour": resp[i].Hour
                 });
             }
 
@@ -47,7 +51,7 @@
     // Create event listeners for when the user submits the form
     $(document).ready(function () {
         $("#submitButton").click(function () {
-            tableau.connectionName = "Top 10 Sources"; // This will be the data source name in Tableau
+            tableau.connectionName = "Top Hourly Destinations"; // This will be the data source name in Tableau
             tableau.submit(); // This sends the connector object to Tableau
         });
     });
