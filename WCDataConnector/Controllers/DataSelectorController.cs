@@ -33,12 +33,12 @@ namespace WCDataConnector.Controllers
             return View();
         }
 
-        public IActionResult Top10Source2()
+        public IActionResult Top10Sources2()
         {
             return View();
         }
 
-        public IActionResult Top10Images()
+        public IActionResult Top10ImageSources()
         {
             return View();
         }

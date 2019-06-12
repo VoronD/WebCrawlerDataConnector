@@ -23,7 +23,7 @@
 
     // Download the data
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("https://gettopservices.azurewebsites.net/api/v1/GetTop10Destinations", function(resp) {
+        $.getJSON("https://gettopservices.azurewebsites.net/api/v1/GetTop10ImageSources", function(resp) {
             var feat = resp.features,
                 tableData = [];
 
