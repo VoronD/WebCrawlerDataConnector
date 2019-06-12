@@ -32,8 +32,8 @@
             // Iterate over the JSON object
             for (var i = 0, len = resp.length; i < len; i++) {
                 tableData.push({
-                    "Source": resp[i].id,
-                    "Count": resp[i].properties.mag
+                    "Source": resp[i].Source,
+                    "Count": resp[i].Count,
                 });
             }
 
