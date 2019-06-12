@@ -28,7 +28,7 @@ namespace WCDataConnector.Controllers
             return View(list);
         }
 
-        public IActionResult Top10Destination2()
+        public IActionResult Top10Destinations2()
         {
             return View();
         }
