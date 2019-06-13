@@ -33,6 +33,11 @@ namespace WCDataConnector.Controllers
             return View();
         }
 
+        public IActionResult Top100Destination()
+        {
+            return View();
+        }
+
         public IActionResult Top10Sources2()
         {
             return View();
@@ -43,7 +48,17 @@ namespace WCDataConnector.Controllers
             return View();
         }
 
+        public IActionResult Top10Sources()
+        {
+            return View();
+        }
 
+        public IActionResult TopHourlyDestinations()
+        {
+            return View();
+        }
+
+        /*
         public IActionResult Top10Source()
         {
             var webClient = new WebClient();
@@ -59,5 +74,7 @@ namespace WCDataConnector.Controllers
 
             return View(list);
         }
+        */
     }
+
 }
